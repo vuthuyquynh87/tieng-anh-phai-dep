@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiếng Anh Truyền Cảm Hứng Cho Phái Đẹp | Google Antigravity</title>
+  <style>
+    :root {
+      --primary-pink: #ec407a;
+      --primary-purple: #9c27b0;
+      --bg-gradient: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 50%, #faf5ff 100%);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-main: #2d1a37;
+      --text-muted: #6b5b7b;
+      --pastel-pink-soft: #fce4ec;
+      --pastel-purple-soft: #f3e5f5;
+      --accent-pink: #f06292;
+      --accent-purple: #ba68c8;
+      --shadow-sm: 0 4px 12px rgba(156, 39, 176, 0.08);
+      --shadow-lg: 0 15px 35px rgba(236, 64, 122, 0.15), 0 5px 15px rgba(156, 39, 176, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 20px 16px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: linear-gradient(135deg, #f48fb1, #ce93d8);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(236, 64, 122, 0.25);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #3b1443;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .instructor-tag {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-pink);
+    }
+
+    /* TABS */
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 64, 122, 0.15);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-btn {
+      flex: 1;
+      max-width: 190px;
+      padding: 10px 16px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(236, 64, 122, 0.3);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PROGRESS BAR */
+    .progress-box {
+      background: #fff;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+      border: 1px solid rgba(236, 64, 122, 0.12);
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .progress-bar-bg {
+      height: 10px;
+      background: #f1e4ee;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 10%;
+      background: linear-gradient(90deg, #ec407a, #ba68c8);
+      border-radius: 999px;
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* SPEED SELECTOR */
+    .audio-controls {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .speed-btn {
+      border: 1px solid var(--accent-purple);
+      background: #fff;
+      color: var(--primary-purple);
+      padding: 4px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .speed-btn.active {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    /* 3D FLASHCARD CONTAINER */
+    .flashcard-wrapper {
+      perspective: 1200px;
+      width: 100%;
+      min-height: 400px;
+      margin: 0 auto 24px;
+      cursor: pointer;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      min-height: 400px;
+      transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-style: preserve-3d;
+      border-radius: var(--radius-lg);
+    }
+
+    .flashcard-wrapper.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* FRONT FACE */
+    .card-front {
+      background: linear-gradient(145deg, #ffffff 0%, #fff7fb 60%, #fbf5ff 100%);
+      color: var(--text-main);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-num {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-pink);
+      background: var(--pastel-pink-soft);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .card-type {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--primary-purple);
+      background: var(--pastel-purple-soft);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .card-front-center {
+      text-align: center;
+      margin: auto 0;
+      padding: 20px 0;
+    }
+
+    .english-word {
+      font-size: 2.85rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #b71c1c, #880e4f, #4a148c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .ipa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fdf2f8;
+      border: 1px solid #fbcfe8;
+      color: #9d174d;
+      font-size: 1.25rem;
+      font-family: 'Cambria', 'Georgia', serif;
+      padding: 8px 18px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .btn-speak-word {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ec407a, #ba68c8);
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(236, 64, 122, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-speak-word:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(236, 64, 122, 0.45);
+    }
+
+    .btn-speak-word:active {
+      transform: scale(0.97);
+    }
+
+    .hint-flip {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* BACK FACE */
+    .card-back {
+      background: linear-gradient(145deg, #fdf4f9 0%, #f7f1fc 100%);
+      transform: rotateY(180deg);
+      border: 2px solid #f3e0ec;
+    }
+
+    .meaning-box {
+      background: #ffffff;
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      border-left: 6px solid var(--accent-pink);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+      margin-bottom: 18px;
+    }
+
+    .meaning-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-pink);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .meaning-text {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #3b1443;
+      line-height: 1.4;
+    }
+
+    .example-box {
+      background: #ffffff;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(186, 104, 200, 0.2);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .example-en-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .example-en {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1e1b4b;
+      line-height: 1.4;
+    }
+
+    .btn-speak-sm {
+      background: var(--pastel-purple-soft);
+      border: 1px solid #d8b4e2;
+      color: var(--primary-purple);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-speak-sm:hover {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    .example-ipa {
+      font-size: 0.95rem;
+      color: #86198f;
+      font-family: 'Cambria', serif;
+      margin-bottom: 6px;
+    }
+
+    .example-vi {
+      font-size: 1.05rem;
+      color: #4c1d95;
+      font-weight: 500;
+      background: #faf5ff;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    /* CONTROLS UNDER CARD */
+    .card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .nav-btn {
+      flex: 1;
+      background: #fff;
+      color: var(--text-main);
+      border: 1px solid rgba(236, 64, 122, 0.2);
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s;
+    }
+
+    .nav-btn:hover {
+      background: #fff;
+      border-color: var(--accent-pink);
+      color: var(--primary-pink);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(236, 64, 122, 0.18);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.98);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .flip-btn-main {
+      flex: 1.2;
+      background: linear-gradient(135deg, #f06292, #ba68c8);
+      color: #fff;
+      border: none;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(236, 64, 122, 0.3);
+      transition: all 0.2s;
+    }
+
+    .flip-btn-main:hover {
+      opacity: 0.95;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(236, 64, 122, 0.4);
+    }
+
+    /* DIALOGUE SECTION (MỤC HỘI THOẠI) */
+    .dialogue-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(236, 64, 122, 0.12);
+    }
+
+    .dialogue-header {
+      background: linear-gradient(135deg, #fdf2f8, #f5f3ff);
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      border-left: 5px solid var(--accent-pink);
+    }
+
+    .dialogue-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #3b1443;
+      margin-bottom: 4px;
+    }
+
+    .dialogue-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .dialogue-play-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ec407a, #ba68c8);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 3px 8px rgba(236, 64, 122, 0.25);
+      transition: all 0.2s;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 4px 0;
+    }
+
+    .chat-row {
+      display: flex;
+      gap: 12px;
+      max-width: 90%;
+      align-items: flex-start;
+    }
+
+    .chat-row.lan {
+      align-self: flex-start;
+    }
+
+    .chat-row.huyen {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .chat-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      border: 2px solid;
+    }
+
+    .chat-row.lan .chat-avatar {
+      border-color: #f48fb1;
+      background: #fff5f8;
+    }
+
+    .chat-row.huyen .chat-avatar {
+      border-color: #ce93d8;
+      background: #fbf5ff;
+    }
+
+    .chat-bubble {
+      padding: 16px 20px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .chat-row.lan .chat-bubble {
+      background: #fff7fa;
+      border-top-left-radius: 4px;
+      border: 1px solid #fce4ec;
+    }
+
+    .chat-row.huyen .chat-bubble {
+      background: linear-gradient(145deg, #f8effc, #f4e8fa);
+      border-top-right-radius: 4px;
+      border: 1px solid #f1daf7;
+    }
+
+    .chat-speaker-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chat-row.lan .chat-speaker-name {
+      color: #c2185b;
+    }
+
+    .chat-row.huyen .chat-speaker-name {
+      color: #7b1fa2;
+      justify-content: flex-end;
+    }
+
+    .chat-text-en {
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: #2b1130;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .chat-text-ipa {
+      font-size: 0.92rem;
+      color: #86198f;
+      font-family: 'Cambria', serif;
+      margin-bottom: 6px;
+    }
+
+    .chat-text-vi {
+      font-size: 1rem;
+      color: #581c87;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 6px 12px;
+      border-radius: 10px;
+      line-height: 1.4;
+    }
+
+    .chat-bubble-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    .btn-chat-audio {
+      border: none;
+      background: #ffffff;
+      color: var(--primary-purple);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      transition: all 0.2s;
+    }
+
+    .btn-chat-audio:hover {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    /* WORD OVERVIEW LIST (BẢNG TỔNG HỢP) */
+    .word-list-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(236, 64, 122, 0.12);
+    }
+
+    .word-table-responsive {
+      overflow-x: auto;
+    }
+
+    table.word-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    table.word-table th {
+      background: #fdf2f8;
+      color: #831843;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-bottom: 2px solid #fbcfe8;
+    }
+
+    table.word-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #f3e8ff;
+      font-size: 1rem;
+    }
+
+    table.word-table tr:hover {
+      background: #fdf4f9;
+    }
+
+    .table-word-title {
+      font-weight: 700;
+      color: #9d174d;
+      font-size: 1.1rem;
+    }
+
+    .table-ipa {
+      font-family: 'Cambria', serif;
+      color: #701a75;
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-pill {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 64, 122, 0.15);
+      font-weight: 500;
+    }
+
+    /* PULSE EFFECT WHEN SPEAKING */
+    .speaking {
+      animation: pulseGlow 1.2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(236, 64, 122, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(236, 64, 122, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(236, 64, 122, 0); }
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 10px 30px;
+      }
+      h1 {
+        font-size: 1.45rem;
+      }
+      .english-word {
+        font-size: 2.2rem;
+      }
+      .card-face {
+        padding: 24px 18px;
+        min-height: 380px;
+      }
+      .flashcard-wrapper, .flashcard-inner {
+        min-height: 380px;
+      }
+      .card-actions {
+        flex-wrap: wrap;
+      }
+      .flip-btn-main {
+        order: -1;
+        width: 100%;
+        flex: auto;
+      }
+      .chat-row {
+        max-width: 98%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="badge-top">✨ Truyền Cảm Hứng Cho Phái Đẹp ✨</div>
+      <h1>10 TỪ VỰNG TIẾNG ANH LÀM CHỦ CUỘC SỐNG</h1>
+      <p class="subtitle">Học phát âm chuẩn Quốc tế (IPA) • Ghi nhớ bằng Thẻ Flashcard 3D • Luyện Hội Thoại Thực Tế</p>
+      <div class="instructor-tag">🌸 Giảng viên: Phạm Huyền • Lớp Google Antigravity</div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('flashcards', this)">
+        <span>🎴 Thẻ 3D</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('dialogue', this)">
+        <span>💬 Hội Thoại</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('overview', this)">
+        <span>📋 Danh Sách</span>
+      </button>
+    </nav>
+
+    <!-- ================== TAB 1: FLASHCARDS ================== -->
+    <section id="tab-flashcards" class="tab-content active">
+      <!-- PROGRESS BAR -->
+      <div class="progress-box">
+        <div class="progress-info">
+          <span id="card-counter">Thẻ 1 / 10</span>
+          <span id="card-percent" style="color: var(--primary-pink);">10% Hoàn thành</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- AUDIO CONTROLS (SPEED SELECTOR) -->
+      <div class="audio-controls">
+        <span>Tốc độ đọc:</span>
+        <button class="speed-btn active" id="speed-normal" onclick="setSpeed(0.9, this)">0.9x Dễ nghe</button>
+        <button class="speed-btn" id="speed-slow" onclick="setSpeed(0.75, this)">0.75x Chậm</button>
+        <button class="speed-btn" id="speed-fast" onclick="setSpeed(1.0, this)">1.0x Chuẩn</button>
+      </div>
+
+      <!-- 3D FLASHCARD -->
+      <div class="flashcard-wrapper" id="flashcard-container" onclick="toggleCardFlip(event)">
+        <div class="flashcard-inner" id="flashcard-inner">
+          
+          <!-- FRONT FACE -->
+          <div class="card-face card-front">
+            <div class="card-meta">
+              <span class="card-num" id="card-num-badge">TỪ 1 / 10</span>
+              <span class="card-type" id="card-pos">Tính từ (adj)</span>
+            </div>
+            
+            <div class="card-front-center">
+              <div class="english-word" id="card-word">Radiant</div>
+              <div class="ipa-badge">
+                <span id="card-ipa">/ˈreɪ.di.ənt/</span>
+              </div>
+              <br>
+              <button class="btn-speak-word" onclick="speakCurrentWord(event)">
+                🔊 Nghe phát âm
+              </button>
+            </div>
+
+            <div class="hint-flip">
+              <span>↻ Chạm vào thẻ hoặc bấm nút bên dưới để lật xem nghĩa & ví dụ</span>
+            </div>
+          </div>
+
+          <!-- BACK FACE -->
+          <div class="card-face card-back">
+            <div class="meaning-box">
+              <div class="meaning-title">Ý NGHĨA TIẾNG VIỆT</div>
+              <div class="meaning-text" id="card-meaning">Rạng rỡ, tỏa sáng, tràn đầy năng lượng tươi vui</div>
+            </div>
+
+            <div class="example-box">
+              <div class="example-en-row">
+                <div class="example-en" id="card-example-en">She looks radiant with her warm and gentle smile.</div>
+                <button class="btn-speak-sm" title="Nghe câu ví dụ" onclick="speakCurrentExample(event)">
+                  🔊
+                </button>
+              </div>
+              <div class="example-ipa" id="card-example-ipa">/ʃiː lʊks ˈreɪdiənt wɪð hɜː wɔːm ænd ˈdʒɛntl smaɪl/</div>
+              <div class="example-vi" id="card-example-vi">Cô ấy trông thật rạng rỡ với nụ cười ấm áp và dịu dàng.</div>
+            </div>
+
+            <div class="hint-flip" style="margin-top: 14px;">
+              <span>↻ Chạm để lật lại mặt trước</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ACTIONS: PREV / FLIP / NEXT -->
+      <div class="card-actions">
+        <button class="nav-btn" id="prev-btn" onclick="prevCard()">
+          ← Từ trước
+        </button>
+        <button class="flip-btn-main" onclick="manualFlip()">
+          🔄 Lật mặt thẻ
+        </button>
+        <button class="nav-btn" id="next-btn" onclick="nextCard()">
+          Từ kế tiếp →
+        </button>
+      </div>
+    </section>
+
+    <!-- ================== TAB 2: DIALOGUE (HỘI THOẠI) ================== -->
+    <section id="tab-dialogue" class="tab-content">
+      <div class="dialogue-card">
+        <div class="dialogue-header">
+          <div class="dialogue-title">BÀI HỘI THOẠI THỰC HÀNH GHI NHỚ</div>
+          <p class="dialogue-desc">
+            Cuộc trò chuyện ấm áp sau giờ học giữa <strong>Giảng viên Phạm Huyền</strong> và bạn <strong>Lan (Học viên)</strong> về bí quyết cân bằng công việc và làm chủ cuộc sống nhờ AI.
+          </p>
+          <button class="dialogue-play-all" id="btn-play-all-dialogue" onclick="playAllDialogue()">
+            ▶ Nghe toàn bộ cuộc trò chuyện
+          </button>
+        </div>
+
+        <div class="chat-container" id="chat-messages-container">
+          <!-- Chat messages rendered dynamically via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== TAB 3: OVERVIEW (BẢNG TỔNG HỢP) ================== -->
+    <section id="tab-overview" class="tab-content">
+      <div class="word-list-card">
+        <h2 style="font-size: 1.35rem; color: #3b1443; margin-bottom: 16px;">Bảng tổng hợp 10 từ vựng truyền cảm hứng</h2>
+        <div class="word-table-responsive">
+          <table class="word-table" id="overview-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">#</th>
+                <th>Từ vựng & IPA</th>
+                <th>Ý nghĩa tiếng Việt</th>
+                <th style="text-align: center; width: 80px;">Nghe</th>
+              </tr>
+            </thead>
+            <tbody id="overview-table-body">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-pill">
+        🌸 Tài liệu học tập được biên soạn & thiết kế cho học viên Google Antigravity • Giảng viên: Phạm Huyền
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    /* ====================================================
+       DATA: 10 TỪ VỰNG & CÂU VÍ DỤ
+       ==================================================== */
+    const vocabularyData = [
+      {
+        id: 1,
+        word: "Radiant",
+        pos: "Tính từ (adj)",
+        ipa: "/ˈreɪ.di.ənt/",
+        meaning: "Rạng rỡ, tỏa sáng, tràn đầy năng lượng tươi vui",
+        exampleEn: "She looks radiant with her warm and gentle smile.",
+        exampleIpa: "/ʃiː lʊks ˈreɪdiənt wɪð hɜː wɔːm ænd ˈdʒɛntl smaɪl/",
+        exampleVi: "Cô ấy trông thật rạng rỡ với nụ cười ấm áp và dịu dàng."
+      },
+      {
+        id: 2,
+        word: "Resilient",
+        pos: "Tính từ (adj)",
+        ipa: "/rɪˈzɪl.jənt/",
+        meaning: "Kiên cường, bền bỉ, mau chóng phục hồi sau khó khăn",
+        exampleEn: "Modern women stay resilient despite any daily challenge.",
+        exampleIpa: "/ˈmɒdən ˈwɪmɪn steɪ rɪˈzɪljənt dɪˈspaɪt ˈɛni ˈdeɪli ˈtʃælɪndʒ/",
+        exampleVi: "Phụ nữ hiện đại luôn kiên cường trước mọi thử thách mỗi ngày."
+      },
+      {
+        id: 3,
+        word: "Serenity",
+        pos: "Danh từ (n)",
+        ipa: "/səˈren.ə.ti/",
+        meaning: "Sự thanh thản, bình yên trong tâm hồn",
+        exampleEn: "A quiet morning cup of tea brings me true serenity.",
+        exampleIpa: "/ə ˈkwaɪət ˈmɔːnɪŋ kʌp əv tiː brɪŋz miː truː səˈrɛnəti/",
+        exampleVi: "Một tách trà buổi sáng yên tĩnh mang lại cho tôi sự bình yên đích thực."
+      },
+      {
+        id: 4,
+        word: "Mindful",
+        pos: "Tính từ (adj)",
+        ipa: "/ˈmaɪnd.fəl/",
+        meaning: "Chánh niệm, tỉnh thức, biết chú tâm vào hiện tại",
+        exampleEn: "Be mindful of your feelings and enjoy the present moment.",
+        exampleIpa: "/biː ˈmaɪndfʊl əv jɔː ˈfiːlɪŋz ænd ɪnˈdʒɔɪ ðə ˈprɛznt ˈməʊmənt/",
+        exampleVi: "Hãy tỉnh thức với cảm xúc của mình và tận hưởng khoảnh khắc hiện tại."
+      },
+      {
+        id: 5,
+        word: "Empower",
+        pos: "Động từ (v)",
+        ipa: "/ɪmˈpaʊ.ər/",
+        meaning: "Trao quyền, tiếp thêm sức mạnh và sự tự chủ",
+        exampleEn: "Learning new technology helps empower women to succeed.",
+        exampleIpa: "/ˈlɜːnɪŋ njuː tɛkˈnɒlədʒi hɛlps ɪmˈpaʊə ˈwɪmɪn tuː səkˈsiːd/",
+        exampleVi: "Học công nghệ mới giúp tiếp thêm sức mạnh cho phụ nữ chạm tới thành công."
+      },
+      {
+        id: 6,
+        word: "Inspire",
+        pos: "Động từ (v)",
+        ipa: "/ɪnˈspaɪər/",
+        meaning: "Truyền cảm hứng, đánh thức đam mê và khát vọng",
+        exampleEn: "Her passion and kindness always inspire everyone around her.",
+        exampleIpa: "/hɜː ˈpæʃn ænd ˈkaɪndnəs ˈɔːlweɪz ɪnˈspaɪər ˈɛvrɪwʌn əˈraʊnd hɜː/",
+        exampleVi: "Niềm đam mê và lòng tốt của cô ấy luôn truyền cảm hứng cho mọi người xung quanh."
+      },
+      {
+        id: 7,
+        word: "Balance",
+        pos: "Danh từ, Động từ (n, v)",
+        ipa: "/ˈbæl.əns/",
+        meaning: "Sự cân bằng; giữ cân bằng công việc và cuộc sống",
+        exampleEn: "It is important to keep a healthy balance in life.",
+        exampleIpa: "/ɪt ɪz ɪmˈpɔːtnt tuː kiːp ə ˈhɛlθi ˈbæləns ɪn laɪf/",
+        exampleVi: "Giữ một sự cân bằng lành mạnh trong cuộc sống là điều rất quan trọng."
+      },
+      {
+        id: 8,
+        word: "Confidence",
+        pos: "Danh từ (n)",
+        ipa: "/ˈkɒn.fɪ.dəns/",
+        meaning: "Sự tự tin, niềm tin vững chắc vào bản thân",
+        exampleEn: "Practice and self-love will boost your inner confidence.",
+        exampleIpa: "/ˈpræktɪs ænd ˈsɛlf lʌv wɪl buːst jɔːr ˈɪnə ˈkɒnfɪdəns/",
+        exampleVi: "Sự rèn luyện và yêu thương bản thân sẽ nâng cao niềm tự tin bên trong bạn."
+      },
+      {
+        id: 9,
+        word: "Productivity",
+        pos: "Danh từ (n)",
+        ipa: "/ˌprɒd.ʌkˈtɪv.ə.ti/",
+        meaning: "Năng suất, hiệu suất làm việc hiệu quả",
+        exampleEn: "Smart AI tools can increase your daily productivity.",
+        exampleIpa: "/smɑːt eɪ-aɪ tuːlz kæn ˈɪnkriːs jɔː ˈdeɪli ˌprɒdʌkˈtɪvəti/",
+        exampleVi: "Các công cụ AI thông minh có thể gia tăng năng suất làm việc mỗi ngày của bạn."
+      },
+      {
+        id: 10,
+        word: "Gratitude",
+        pos: "Danh từ (n)",
+        ipa: "/ˈɡræt.ɪ.tjuːd/",
+        meaning: "Lòng biết ơn, sự trân trọng những điều tốt đẹp",
+        exampleEn: "Starting each day with gratitude fills your heart with joy.",
+        exampleIpa: "/ˈstɑːtɪŋ iːtʃ deɪ wɪð ˈɡrætɪtjuːd fɪlz jɔː hɑːt wɪð dʒɔɪ/",
+        exampleVi: "Bắt đầu mỗi ngày với lòng biết ơn sẽ lấp đầy trái tim bạn bằng niềm vui."
+      }
+    ];
+
+    /* ====================================================
+       DATA: HỘI THOẠI (DIALOGUE)
+       ==================================================== */
+    const dialogueData = [
+      {
+        speaker: "Lan (Học viên)",
+        role: "lan",
+        avatar: "👩",
+        en: "Hi teacher Huyen! You look so radiant and full of energy today!",
+        ipa: "/haɪ ˈtiːtʃə Huyen! juː lʊk səʊ ˈreɪdiənt ænd fʊl əv ˈɛnədʒi təˈdeɪ!/",
+        vi: "Em chào cô Huyền! Hôm nay trông cô thật rạng rỡ và tràn đầy năng lượng ạ!"
+      },
+      {
+        speaker: "Chị Huyền (Giảng viên)",
+        role: "huyen",
+        avatar: "👩‍💼",
+        en: "Thank you, Lan! I start my morning with gratitude and a quiet cup of tea to find serenity.",
+        ipa: "/θæŋk juː, Lan! aɪ stɑːt maɪ ˈmɔːnɪŋ wɪð ˈɡrætɪtjuːd ænd ə ˈkwaɪət kʌp əv tiː tuː faɪnd səˈrɛnəti./",
+        vi: "Cảm ơn Lan nhé! Cô luôn bắt đầu buổi sáng bằng lòng biết ơn và một tách trà yên tĩnh để tìm thấy sự bình yên."
+      },
+      {
+        speaker: "Lan (Học viên)",
+        role: "lan",
+        avatar: "👩",
+        en: "That is lovely! But how do you keep a good balance between work and family?",
+        ipa: "/ðæt ɪz ˈlʌvli! bʌt haʊ duː juː kiːp ə ɡʊd ˈbæləns bɪˈtwiːn wɜːk ænd ˈfæmɪli?/",
+        vi: "Tuyệt quá ạ! Nhưng làm sao cô có thể giữ được sự cân bằng tốt giữa công việc và gia đình vậy cô?"
+      },
+      {
+        speaker: "Chị Huyền (Giảng viên)",
+        role: "huyen",
+        avatar: "👩‍💼",
+        en: "I use AI tools to boost my productivity. When work is smooth, I stay mindful and enjoy every moment with my kids.",
+        ipa: "/aɪ juːz eɪ-aɪ tuːlz tuː buːst maɪ ˌprɒdʌkˈtɪvəti. wɛn wɜːk ɪz smuːð, aɪ steɪ ˈmaɪndfʊl ænd ɪnˈdʒɔɪ ˈɛvri ˈməʊmənt wɪð maɪ kɪdz./",
+        vi: "Cô sử dụng các công cụ AI để nâng cao năng suất làm việc. Khi công việc trôi chảy, cô có thể sống tỉnh thức và tận hưởng từng khoảnh khắc bên các con."
+      },
+      {
+        speaker: "Lan (Học viên)",
+        role: "lan",
+        avatar: "👩",
+        en: "Sometimes I feel overwhelmed, but your lesson really helped empower my confidence.",
+        ipa: "/ˈsʌmtaɪmz aɪ fiːl ˌəʊvəˈwɛlmd, bʌt jɔː ˈlɛsn ˈrɪəli hɛlpt ɪmˈpaʊə maɪ ˈkɒnfɪdəns./",
+        vi: "Đôi lúc em thấy bị quá tải, nhưng bài giảng của cô thực sự đã tiếp thêm sức mạnh cho sự tự tin của em."
+      },
+      {
+        speaker: "Chị Huyền (Giảng viên)",
+        role: "huyen",
+        avatar: "👩‍💼",
+        en: "Always remember: You are strong and resilient. You will inspire many other women too!",
+        ipa: "/ˈɔːlweɪz rɪˈmɛmbə: juː ɑː strɒŋ ænd rɪˈzɪljənt. juː wɪl ɪnˈspaɪə ˈmɛni ˈʌðə ˈwɪmɪn tuː!/",
+        vi: "Hãy luôn nhớ rằng: Em rất mạnh mẽ và kiên cường. Em cũng sẽ truyền cảm hứng cho rất nhiều chị em phụ nữ khác đấy!"
+      }
+    ];
+
+    /* ====================================================
+       APP STATE
+       ==================================================== */
+    let currentIndex = 0;
+    let isFlipped = false;
+    let speechRate = 0.9;
+    let isPlayingAllDialogue = false;
+
+    /* ====================================================
+       WEB SPEECH API (PHÁT ÂM)
+       ==================================================== */
+    function speakText(text, callback) {
+      if (!('speechSynthesis' in window)) {
+        alert("Trình duyệt của bạn chưa hỗ trợ tính năng Web Speech API. Vui lòng thử dùng Chrome, Edge hoặc Safari.");
+        if (callback) callback();
+        return;
+      }
+
+      window.speechSynthesis.cancel(); // Stop any pending speech
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = speechRate;
+      utterance.pitch = 1.05; // slightly warmer tone
+
+      // Try selecting an English natural voice if available
+      const voices = window.speechSynthesis.getVoices();
+      const preferredVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Samantha') || v.name.includes('Google') || v.name.includes('Jenny') || v.name.includes('Zira')));
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
+
+      if (callback) {
+        utterance.onend = callback;
+        utterance.onerror = callback;
+      }
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function setSpeed(rate, btn) {
+      speechRate = rate;
+      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function speakCurrentWord(event) {
+      if (event) event.stopPropagation();
+      const current = vocabularyData[currentIndex];
+      const btn = event ? event.currentTarget : null;
+      if (btn) btn.classList.add('speaking');
+      speakText(current.word, () => {
+        if (btn) btn.classList.remove('speaking');
+      });
+    }
+
+    function speakCurrentExample(event) {
+      if (event) event.stopPropagation();
+      const current = vocabularyData[currentIndex];
+      const btn = event ? event.currentTarget : null;
+      if (btn) btn.classList.add('speaking');
+      speakText(current.exampleEn, () => {
+        if (btn) btn.classList.remove('speaking');
+      });
+    }
+
+    /* ====================================================
+       FLASHCARD LOGIC & NAVIGATION
+       ==================================================== */
+    function renderCard(index) {
+      const data = vocabularyData[index];
+      const total = vocabularyData.length;
+
+      // Update Header & Progress
+      document.getElementById('card-counter').innerText = `Thẻ ${index + 1} / ${total}`;
+      const percent = Math.round(((index + 1) / total) * 100);
+      document.getElementById('card-percent').innerText = `${percent}% Hoàn thành`;
+      document.getElementById('progress-fill').style.width = `${percent}%`;
+
+      // Front Face
+      document.getElementById('card-num-badge').innerText = `TỪ ${index + 1} / ${total}`;
+      document.getElementById('card-pos').innerText = data.pos;
+      document.getElementById('card-word').innerText = data.word;
+      document.getElementById('card-ipa').innerText = data.ipa;
+
+      // Back Face
+      document.getElementById('card-meaning').innerText = data.meaning;
+      document.getElementById('card-example-en').innerText = data.exampleEn;
+      document.getElementById('card-example-ipa').innerText = data.exampleIpa;
+      document.getElementById('card-example-vi').innerText = data.exampleVi;
+
+      // Button states
+      document.getElementById('prev-btn').disabled = (index === 0);
+      document.getElementById('next-btn').disabled = (index === total - 1);
+    }
+
+    function toggleCardFlip(event) {
+      // Don't flip if user clicked directly on audio button
+      if (event.target.closest('button')) return;
+      isFlipped = !isFlipped;
+      document.getElementById('flashcard-container').classList.toggle('flipped', isFlipped);
+    }
+
+    function manualFlip() {
+      isFlipped = !isFlipped;
+      document.getElementById('flashcard-container').classList.toggle('flipped', isFlipped);
+    }
+
+    function nextCard() {
+      if (currentIndex < vocabularyData.length - 1) {
+        currentIndex++;
+        resetFlipAndRender();
+      }
+    }
+
+    function prevCard() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        resetFlipAndRender();
+      }
+    }
+
+    function resetFlipAndRender() {
+      isFlipped = false;
+      document.getElementById('flashcard-container').classList.remove('flipped');
+      setTimeout(() => {
+        renderCard(currentIndex);
+      }, 150);
+    }
+
+    /* Keyboard navigation */
+    document.addEventListener('keydown', (e) => {
+      const flashcardTabActive = document.getElementById('tab-flashcards').classList.contains('active');
+      if (!flashcardTabActive) return;
+
+      if (e.code === 'ArrowRight') nextCard();
+      else if (e.code === 'ArrowLeft') prevCard();
+      else if (e.code === 'Space') {
+        e.preventDefault();
+        manualFlip();
+      }
+    });
+
+    /* ====================================================
+       DIALOGUE SECTION (HỘI THOẠI)
+       ==================================================== */
+    function renderDialogue() {
+      const container = document.getElementById('chat-messages-container');
+      container.innerHTML = '';
+
+      dialogueData.forEach((item, index) => {
+        const row = document.createElement('div');
+        row.className = `chat-row ${item.role}`;
+        row.id = `chat-row-${index}`;
+
+        row.innerHTML = `
+          <div class="chat-avatar">${item.avatar}</div>
+          <div class="chat-bubble">
+            <div class="chat-speaker-name">${item.speaker}</div>
+            <div class="chat-text-en">"${item.en}"</div>
+            <div class="chat-text-ipa">${item.ipa}</div>
+            <div class="chat-text-vi">👉 ${item.vi}</div>
+            <div class="chat-bubble-actions">
+              <button class="btn-chat-audio" onclick="playSingleDialogueLine(${index})">
+                🔊 Nghe câu này
+              </button>
+            </div>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function playSingleDialogueLine(index) {
+      const item = dialogueData[index];
+      const row = document.getElementById(`chat-row-${index}`);
+      if (row) row.classList.add('speaking');
+      speakText(item.en, () => {
+        if (row) row.classList.remove('speaking');
+      });
+    }
+
+    function playAllDialogue() {
+      if (isPlayingAllDialogue) {
+        window.speechSynthesis.cancel();
+        isPlayingAllDialogue = false;
+        document.getElementById('btn-play-all-dialogue').innerText = '▶ Nghe toàn bộ cuộc trò chuyện';
+        document.querySelectorAll('.chat-row').forEach(r => r.classList.remove('speaking'));
+        return;
+      }
+
+      isPlayingAllDialogue = true;
+      document.getElementById('btn-play-all-dialogue').innerText = '⏹ Đang phát (Bấm để dừng)';
+      
+      let step = 0;
+      function playStep() {
+        if (!isPlayingAllDialogue || step >= dialogueData.length) {
+          isPlayingAllDialogue = false;
+          document.getElementById('btn-play-all-dialogue').innerText = '▶ Nghe toàn bộ cuộc trò chuyện';
+          document.querySelectorAll('.chat-row').forEach(r => r.classList.remove('speaking'));
+          return;
+        }
+
+        document.querySelectorAll('.chat-row').forEach(r => r.classList.remove('speaking'));
+        const activeRow = document.getElementById(`chat-row-${step}`);
+        if (activeRow) {
+          activeRow.classList.add('speaking');
+          activeRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        speakText(dialogueData[step].en, () => {
+          step++;
+          setTimeout(playStep, 600); // 600ms pause between turns
+        });
+      }
+
+      playStep();
+    }
+
+    /* ====================================================
+       OVERVIEW TABLE (DANH SÁCH TỔNG HỢP)
+       ==================================================== */
+    function renderOverviewTable() {
+      const tbody = document.getElementById('overview-table-body');
+      tbody.innerHTML = '';
+
+      vocabularyData.forEach((item) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-weight: 700; color: var(--accent-pink);">${item.id}</td>
+          <td>
+            <div class="table-word-title">${item.word} <small style="font-weight: normal; color: #8e24aa;">(${item.pos.split(' ')[1] || ''})</small></div>
+            <div class="table-ipa">${item.ipa}</div>
+          </td>
+          <td style="color: #3b1443; font-weight: 500;">${item.meaning}</td>
+          <td style="text-align: center;">
+            <button class="btn-speak-sm" style="margin: 0 auto;" onclick="speakText('${item.word}')">🔊</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    /* ====================================================
+       TAB SWITCHING
+       ==================================================== */
+    function switchTab(tabName, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(`tab-${tabName}`).classList.add('active');
+
+      if (tabName !== 'dialogue' && isPlayingAllDialogue) {
+        window.speechSynthesis.cancel();
+        isPlayingAllDialogue = false;
+        document.getElementById('btn-play-all-dialogue').innerText = '▶ Nghe toàn bộ cuộc trò chuyện';
+      }
+    }
+
+    /* ====================================================
+       INITIALIZATION
+       ==================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCard(0);
+      renderDialogue();
+      renderOverviewTable();
+
+      // Pre-warm SpeechSynthesis voices
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = () => {
+          window.speechSynthesis.getVoices();
+        };
+      }
+    });
+  </script>
+</body>
+</html>
